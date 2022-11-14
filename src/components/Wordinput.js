@@ -50,7 +50,7 @@ export default function Wordinput() {
             </div>
             <input type="text" onKeyDown={newInput} onChange={inputs} />
             <br />
-            <p>Correct : {correct}</p>
+            <p>Correct: {correct}</p>
         </div>
     )
 }
