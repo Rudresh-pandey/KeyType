@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import outputData from './Data';
+import './style.css'
 export default function Wordinput() {
 
     const [input, setInput] = useState('');
@@ -35,22 +36,29 @@ export default function Wordinput() {
         setInput(event.target.value);
     }
 
-
+    let counter = 0;
+    // let result = [];
     return (
-        <div>
-            <div style={{ display: "flex" }}>
-                {outputData.map((data) => {
-                    if (outputData[i] === data) {
-                        return <p style={{ color: "red" }} >{data}&nbsp;&nbsp;</p>
-                    }
-                    else {
-                        return <p>{data}&nbsp;&nbsp;</p>
-                    }
-                })}
+        <>
+            <div className="middleBox">
+
+                <div style={{ display: "flex" }}>
+                    {outputData.map((data) => {
+                        if (outputData[i] === data && counter === 0) {
+                            counter++;
+                            return <p style={{ color: "red", fontSize: "22px" }} >{data}</p>
+
+                        }
+                        // else {
+                        //     // return <p style={{ fontSize: "22px" }} >{data}&nbsp;&nbsp;</p>
+                        // }
+                        return null;
+                    })}
+                </div>
+                <input style={{ fontSize: "32px" }} type="text" onKeyDown={newInput} onChange={inputs} />
+                <br />
+                <p>Correct: {correct}</p>
             </div>
-            <input type="text" onKeyDown={newInput} onChange={inputs} />
-            <br />
-            <p>Correct: {correct}</p>
-        </div>
+        </>
     )
 }

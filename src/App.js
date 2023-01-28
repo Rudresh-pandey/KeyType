@@ -1,11 +1,11 @@
-import './App.css';
-import Option from './components/Option';
+
+// import Option from './components/Option';
 import Wordinput from './components/Wordinput';
 
 function App() {
   return (
     <div >
-      <Option />
+      {/* <Option /> */}
       <Wordinput />
     </div >
   );
