@@ -9,7 +9,9 @@ body{
    /* display: inline; */
 }
 
-
+span{
+    font-size: 20px;
+}
 
 .middleBox{
     display: flex;
@@ -21,4 +23,5 @@ body{
 input{
     margin-top: 30px;
     max-width: 300px;
+    font-size: 20px;
 }

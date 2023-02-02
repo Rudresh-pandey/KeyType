@@ -88,7 +88,7 @@ function createWords() {
     let str = data[rand].words
     // console.log(str)
     let strr = ""
-    for (let i = 0; i < str.length; i++) {
+    for (let i = 0; i <= str.length; i++) {
         if (str[i] !== " ") {
             strr += str[i]
         }
