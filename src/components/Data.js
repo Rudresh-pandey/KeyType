@@ -79,14 +79,24 @@ const data = [{
     "id": 20,
     "words": "ego precision find earthquake utter see inch exaggerate portrait ordinary sample aspect skate eagle conventional behave shiver legislation pottery wardrobe bush chord swing fashionable commitment commission canvas cancel alive temperature confuse chicken exempt friend shelter tie unity crash context partner topple install vegetable indirect am objective boot pest fortune conviction "
 }];
+
 const outputData = [];
+
 function createWords() {
 
-
     let rand = Math.floor(Math.random() * data.length);
-    console.log(data[rand].words)
-    outputData.push(data[rand].words);
-
+    let str = data[rand].words
+    // console.log(str)
+    let strr = ""
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== " ") {
+            strr += str[i]
+        }
+        else {
+            outputData.push(strr)
+            strr = ""
+        }
+    }
 
 }
 createWords();
