@@ -24,18 +24,18 @@ export default function Wordinput() {
         // }
 
         if (event.keyCode === 32) {
-            console.log(input);
+            // console.log(input);
             event.target.value = "";
             let vCheck = " " + outputData[i];
 
             if (input === vCheck && i > 0) {
-                console.log("yes");
+                // console.log("yes");
                 let current = correct + 1;
                 setCorrect(current);
 
             }
             if (input === outputData[i] && i === 0) {
-                console.log("yes");
+                // console.log("yes");
                 let current = correct + 1;
                 setCorrect(current);
 
@@ -63,7 +63,7 @@ export default function Wordinput() {
                         // if (outputData[i] === data && counter === 0) {
                         //     counter++;
 
-                        return <span style={{ fontSize: "22px" }} >{data}&nbsp;</span>
+                        return <span >{data}&nbsp;</span>
                         // }
                         // else {
                         //     // return <p style={{ fontSize: "22px" }} >{data}&nbsp;&nbsp;</p>
@@ -72,7 +72,7 @@ export default function Wordinput() {
                     })}
                 </div>
 
-                <input style={{ fontSize: "20px" }} type="text" onKeyDown={newInput} onChange={inputs} />
+                <input type="text" onKeyDown={newInput} onChange={inputs} />
                 <br />
                 <p>Correct: {correct}</p>
             </div>
