@@ -7,6 +7,22 @@ export default function Wordinput() {
     const [correct, setCorrect] = useState(0);
     const [i, setI] = useState(0);
     function newInput(event) {
+
+        // if (event.keyCode === 32) {
+        //     // let currInput = event.target.value;
+        //     event.target.value = "";
+        //     console.log(input)
+        //     console.log(outputData[0])
+        //     if (input === outputData[0]) {
+        //         console.log("yes")
+        //     }
+        //     else {
+        //         console.log("no")
+        //     }
+        //     let currenti = i + 1;
+        //     setI(currenti);
+        // }
+
         if (event.keyCode === 32) {
             console.log(input);
             event.target.value = "";
@@ -29,6 +45,7 @@ export default function Wordinput() {
 
         }
         return true;
+
     }
 
 
@@ -41,21 +58,21 @@ export default function Wordinput() {
     return (
         <>
             <div className="middleBox">
-
-                <div style={{ display: "flex" }}>
+                <div id='WordList' >
                     {outputData.map((data) => {
-                        if (outputData[i] === data && counter === 0) {
-                            counter++;
-                            return <p style={{ color: "red", fontSize: "22px" }} >{data}</p>
+                        // if (outputData[i] === data && counter === 0) {
+                        //     counter++;
 
-                        }
+                        return <span style={{ fontSize: "22px" }} >{data}&nbsp;</span>
+                        // }
                         // else {
                         //     // return <p style={{ fontSize: "22px" }} >{data}&nbsp;&nbsp;</p>
                         // }
-                        return null;
+                        // return null;
                     })}
                 </div>
-                <input style={{ fontSize: "32px" }} type="text" onKeyDown={newInput} onChange={inputs} />
+
+                <input style={{ fontSize: "20px" }} type="text" onKeyDown={newInput} onChange={inputs} />
                 <br />
                 <p>Correct: {correct}</p>
             </div>
