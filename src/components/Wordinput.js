@@ -5,6 +5,7 @@ export default function Wordinput() {
 
     const [input, setInput] = useState('');
     const [correct, setCorrect] = useState(0);
+    const [wrong, setWrong] = useState(0);
     const [i, setI] = useState(0);
     function newInput(event) {
 
@@ -32,14 +33,22 @@ export default function Wordinput() {
                 // console.log("yes");
                 let current = correct + 1;
                 setCorrect(current);
-
             }
+            if (input !== vCheck && i > 0) {
+                let current = wrong + 1;
+                setWrong(current);
+            }
+
             if (input === outputData[i] && i === 0) {
                 // console.log("yes");
                 let current = correct + 1;
                 setCorrect(current);
-
             }
+            if (input !== outputData[i] && i === 0) {
+                let current = wrong + 1;
+                setWrong(current);
+            }
+
             let currenti = i + 1;
             setI(currenti);
 
@@ -74,7 +83,10 @@ export default function Wordinput() {
 
                 <input type="text" onKeyDown={newInput} onChange={inputs} />
                 <br />
-                <p>Correct: {correct}</p>
+                <div className='curr-results'>
+                    <p >Correct: <span id="correct">{correct}</span></p>
+                    <p >Wrong: <span id="wrong">{wrong}</span></p>
+                </div>
             </div>
         </>
     )
