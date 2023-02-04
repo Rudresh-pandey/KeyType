@@ -1,11 +1,12 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(45, 45, 45);
 }
 
 #WordList {
     width: 700px;
     word-break: break-all;
-   
+    height: 170px;
    /* display: inline; */
 }
 
@@ -17,6 +18,12 @@ span{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #bababa;
+    align-self: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -24,4 +31,18 @@ input{
     margin-top: 30px;
     max-width: 300px;
     font-size: 20px;
+}
+
+#correct{
+    color: rgb(19, 255, 19);
+    font-size: 17px;
+}
+#wrong{
+    color: rgb(236, 7, 7);
+    font-size: 17px;
+}
+
+.curr-results{
+    display: flex;
+    gap: 40px;
 }
