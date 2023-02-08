@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import outputData from './Data';
 import './style.css'
 export default function Wordinput() {
@@ -7,6 +7,19 @@ export default function Wordinput() {
     const [correct, setCorrect] = useState(0);
     const [wrong, setWrong] = useState(0);
     const [i, setI] = useState(0);
+
+    useEffect(() => {
+        const reloadPage = (event) => {
+            if (event.keyCode === 18) {
+                window.location.reload();
+            }
+        };
+        window.addEventListener('keydown', reloadPage);
+        return () => {
+            window.removeEventListener('keydown', reloadPage);
+        }
+    }, []);
+
     function newInput(event) {
 
         // if (event.keyCode === 32) {
