@@ -10,7 +10,7 @@ export default function Wordinput() {
 
     useEffect(() => {
         const reloadPage = (event) => {
-            if (event.keyCode === 18) {
+            if (event.key === "Alt") {
                 window.location.reload();
             }
         };
@@ -37,7 +37,7 @@ export default function Wordinput() {
         //     setI(currenti);
         // }
 
-        if (event.keyCode === 32) {
+        if (event.key === " ") {
             // console.log(input);
             event.target.value = "";
             let vCheck = " " + outputData[i];
