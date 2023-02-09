@@ -18,15 +18,24 @@ span{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #bababa;
+    color: #bababa; 
     align-self: center;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
+.Logo{
+    /* margin-bottom: 30px; */
+    display: flex;
+    align-items: center;
+    width: 180px;
+    justify-content: space-between;
+}
+#logoImg{
+    height: 30px;
+    width: 50px;
+}
 input{
     margin-top: 30px;
     max-width: 300px;

@@ -79,7 +79,12 @@ export default function Wordinput() {
     // let result = [];
     return (
         <>
+
             <div className="middleBox">
+                <div className="Logo">
+                    <img id='logoImg' src="logo192.png" alt="" />
+                    <p style={{ fontSize: "30px", fontWeight: "700" }}>keyType</p>
+                </div>
                 <div id='WordList' >
                     {outputData.map((data) => {
                         if (outputData[i] === data && counter === 0) {
