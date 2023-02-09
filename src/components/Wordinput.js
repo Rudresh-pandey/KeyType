@@ -82,14 +82,13 @@ export default function Wordinput() {
             <div className="middleBox">
                 <div id='WordList' >
                     {outputData.map((data) => {
-                        // if (outputData[i] === data && counter === 0) {
-                        //     counter++;
-
-                        return <span >{data}&nbsp;</span>
-                        // }
-                        // else {
-                        //     // return <p style={{ fontSize: "22px" }} >{data}&nbsp;&nbsp;</p>
-                        // }
+                        if (outputData[i] === data && counter === 0) {
+                            counter++;
+                            return <span style={{ color: "red" }}>{data}&nbsp;</span>
+                        }
+                        else {
+                            return <span>{data}&nbsp;</span>
+                        }
                         // return null;
                     })}
                 </div>
