@@ -75,7 +75,7 @@ export default function Wordinput() {
         setInput(event.target.value);
     }
 
-    let counter = 0;
+    // let counter = 0;
     // let result = [];
     return (
         <>
@@ -87,14 +87,17 @@ export default function Wordinput() {
                 </div>
                 <div id='WordList' >
                     {outputData.map((data) => {
-                        if (outputData[i] === data && counter === 0) {
-                            counter++;
+                        if (outputData[i] === data) {
+
                             return <span style={{ color: "red" }}>{data}&nbsp;</span>
+                        }
+                        else if (i === 50) {
+                            return null;
                         }
                         else {
                             return <span>{data}&nbsp;</span>
                         }
-                        // return null;
+
                     })}
                 </div>
 
