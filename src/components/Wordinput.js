@@ -7,6 +7,7 @@ export default function Wordinput() {
     const [correct, setCorrect] = useState(0);
     const [wrong, setWrong] = useState(0);
     const [i, setI] = useState(0);
+    const [correctWord, setCorrectWord] = useState("");
 
     useEffect(() => {
         const reloadPage = (event) => {
@@ -44,8 +45,10 @@ export default function Wordinput() {
 
             if (input === vCheck && i > 0) {
                 // console.log("yes");
+
                 let current = correct + 1;
                 setCorrect(current);
+                setCorrectWord(input);
             }
             if (input !== vCheck && i > 0) {
                 let current = wrong + 1;
@@ -88,14 +91,14 @@ export default function Wordinput() {
                 <div id='WordList' >
                     {outputData.map((data) => {
                         if (outputData[i] === data) {
-
-                            return <span style={{ color: "red" }}>{data}&nbsp;</span>
+                            return <span style={{ color: "red" }}>{data}</span>
                         }
+
                         else if (i === 50) {
                             return null;
                         }
                         else {
-                            return <span>{data}&nbsp;</span>
+                            return <span>{data}</span>
                         }
 
                     })}

@@ -12,6 +12,7 @@ body{
 
 span{
     font-size: 1.5em;
+    padding: 2px 4px;
 }
 
 .middleBox{
@@ -37,9 +38,9 @@ span{
     width: 50px;
 }
 input{
-    margin-top: 30px;
+    margin-top: 10%;
     max-width: 300px;
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 #correct{
