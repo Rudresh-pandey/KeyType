@@ -92,21 +92,26 @@ export default function Wordinput() {
                     `${i}` >= 50 ? <div className='curr-results'>
                         <p >Correct: <span id="correct">{correct}</span></p>
                         <p >Wrong: <span id="wrong">{wrong}</span></p>
-                    </div> : <div id='WordList' >
-                        {
-                            outputData.map((data) => {
-                                if (outputData[i] === data) {
-                                    return <span style={{ color: "red" }}>{data}</span>
+                    </div> :
+                        <>
+                            <div id='WordList' >
+                                {
+                                    outputData.map((data) => {
+                                        if (outputData[i] === data) {
+                                            return <span style={{ color: "red" }}>{data}</span>
+                                        }
+                                        else {
+                                            return <span>{data}</span>
+                                        }
+                                    })
                                 }
-                                else {
-                                    return <span>{data}</span>
-                                }
-                            })
-                        }
 
-                    </div>
+                            </div>
+                            <input type="text" onKeyDown={newInput} onChange={inputs} />
+                        </>
                 }
-                {/* <div id='WordList' >
+            </div>
+            {/* <div id='WordList' >
                     {
                         outputData.map((data) => {
                             if (outputData[i] === data) {
@@ -120,14 +125,13 @@ export default function Wordinput() {
 
                 </div> */}
 
-
-                <input type="text" onKeyDown={newInput} onChange={inputs} />
-                <br />
-                {/* <div className='curr-results'>
+            {/* <input type="text" onKeyDown={newInput} onChange={inputs} /> */}
+            {/* <br /> */}
+            {/* <div className='curr-results'>
                     <p >Correct: <span id="correct">{correct}</span></p>
                     <p >Wrong: <span id="wrong">{wrong}</span></p>
                 </div> */}
-            </div>
+
         </>
     )
 }
