@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Source+Code+Pro:wght@600&family=Trispace:wght@200;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
 body{
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     font-family: monospace;
     background-color: rgb(45, 45, 45);
+    /* font-size: ; */
 }
 
 #WordList {
@@ -10,7 +13,11 @@ body{
     height: 170px;
    /* display: inline; */
 }
-
+.heading{
+    font-size: 2.5em;
+    font-family: Inconsolata;
+    color: orange;
+}
 span{
     font-size: 2em;
     padding: 2px 5px;
@@ -27,16 +34,25 @@ span{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.active{
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}
+.notactive{
+    color: rgba(202, 202, 202, 0.842);
+}
 .Logo{
     /* margin-bottom: 30px; */
     display: flex;
     align-items: center;
-    width: 180px;
+    width: 230px;
     justify-content: space-between;
 }
 #logoImg{
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 75px;
 }
 input{
     margin-top: 10%;
@@ -44,6 +60,7 @@ input{
     font-size: 2em;
     /* padding: 5px 0px; */
     border: none;
+    font-family: Montserrat;
 }
 input:focus{
     outline: none;
@@ -51,13 +68,15 @@ input:focus{
 
 #correct{
     color: rgb(19, 255, 19);
-    font-size: 1em;
+    font-size: 1.5em;
 }
 #wrong{
     color: rgb(236, 7, 7);
-    font-size: 1em;
+    font-size: 1.5em;
 }
-
+.resultTEXT{
+    font-size: 2em;
+}
 .curr-results{
     display: flex;
     gap: 40px;
