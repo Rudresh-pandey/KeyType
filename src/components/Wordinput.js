@@ -26,26 +26,27 @@ export default function Wordinput() {
         if (event.key === " ") {
             // console.log(input);
             event.target.value = "";
-            let vCheck = " " + outputData[i];
+            // let vCheck = " " + outputData[i];
 
-            if (input === vCheck && i > 0) {
-                // console.log("yes");
+            // if (input === vCheck) {
+            //     // console.log("yes");
 
+            //     let current = correct + 1;
+            //     setCorrect(current);
+            //     // setCorrectWord(input);
+            // }
+            // if (input !== vCheck) {
+            //     let current = wrong + 1;
+            //     setWrong(current);
+            // }
+
+            if (input === outputData[i]) {
+                console.log("yes");
                 let current = correct + 1;
                 setCorrect(current);
-                // setCorrectWord(input);
             }
-            if (input !== vCheck && i > 0) {
-                let current = wrong + 1;
-                setWrong(current);
-            }
-
-            if (input === outputData[i] && i === 0) {
-                // console.log("yes");
-                let current = correct + 1;
-                setCorrect(current);
-            }
-            if (input !== outputData[i] && i <= 50) {
+            else if (input !== outputData[i]) {
+                console.log("no")
                 let current = wrong + 1;
                 setWrong(current);
             }
@@ -70,30 +71,31 @@ export default function Wordinput() {
             <div className="middleBox">
                 <div className="Logo">
                     <img id='logoImg' src="logo192.png" alt="" />
-                    <p style={{ fontSize: "30px", fontWeight: "700" }}>keyType</p>
+                    <p className="heading">keyType</p>
                 </div>
                 {
-                    `${i}` >= 50 ? <div className='curr-results'>
-                        <p >Correct: <span id="correct">{correct}</span></p>
-                        <p >Wrong: <span id="wrong">{wrong}</span></p>
+                    `${i}` > 49 ? <div className='curr-results'>
+                        <p className="resultTEXT" >Correct: <span id="correct">{correct}</span></p>
+                        <p className='resultTEXT' >Wrong: <span id="wrong">{wrong}</span></p>
                     </div> :
                         <>
                             <div id='WordList' >
                                 {
                                     outputData.map((data) => {
                                         if (outputData[i] === data) {
-                                            return <span style={{ color: "red" }}>{data}</span>
+                                            return <span className="active">{data}</span>
                                         }
                                         else {
-                                            return <span>{data}</span>
+                                            return <span className="notactive">{data}</span>
                                         }
                                     })
                                 }
-
                             </div>
                             <input type="text" onKeyDown={newInput} onChange={inputs} />
+
                         </>
                 }
+
             </div>
         </>
     )
