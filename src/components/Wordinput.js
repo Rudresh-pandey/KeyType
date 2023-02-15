@@ -7,7 +7,7 @@ export default function Wordinput() {
     const [correct, setCorrect] = useState(0);
     const [wrong, setWrong] = useState(0);
     const [i, setI] = useState(0);
-    const [correctWord, setCorrectWord] = useState("");
+    // const [correctWord, setCorrectWord] = useState("");
 
     useEffect(() => {
         const reloadPage = (event) => {
@@ -23,21 +23,6 @@ export default function Wordinput() {
 
     function newInput(event) {
 
-        // if (event.keyCode === 32) {
-        //     // let currInput = event.target.value;
-        //     event.target.value = "";
-        //     console.log(input)
-        //     console.log(outputData[0])
-        //     if (input === outputData[0]) {
-        //         console.log("yes")
-        //     }
-        //     else {
-        //         console.log("no")
-        //     }
-        //     let currenti = i + 1;
-        //     setI(currenti);
-        // }
-
         if (event.key === " ") {
             // console.log(input);
             event.target.value = "";
@@ -48,7 +33,7 @@ export default function Wordinput() {
 
                 let current = correct + 1;
                 setCorrect(current);
-                setCorrectWord(input);
+                // setCorrectWord(input);
             }
             if (input !== vCheck && i > 0) {
                 let current = wrong + 1;
@@ -82,7 +67,6 @@ export default function Wordinput() {
     // let result = [];
     return (
         <>
-
             <div className="middleBox">
                 <div className="Logo">
                     <img id='logoImg' src="logo192.png" alt="" />
@@ -111,27 +95,6 @@ export default function Wordinput() {
                         </>
                 }
             </div>
-            {/* <div id='WordList' >
-                    {
-                        outputData.map((data) => {
-                            if (outputData[i] === data) {
-                                return <span style={{ color: "red" }}>{data}</span>
-                            }
-                            else {
-                                return <span>{data}</span>
-                            }
-                        })
-                    }
-
-                </div> */}
-
-            {/* <input type="text" onKeyDown={newInput} onChange={inputs} /> */}
-            {/* <br /> */}
-            {/* <div className='curr-results'>
-                    <p >Correct: <span id="correct">{correct}</span></p>
-                    <p >Wrong: <span id="wrong">{wrong}</span></p>
-                </div> */}
-
         </>
     )
 }
