@@ -11,7 +11,7 @@ export default function Wordinput() {
 
     useEffect(() => {
         const reloadPage = (event) => {
-            if (event.key === "Alt") {
+            if (event.key === "Shift") {
                 window.location.reload();
             }
         };
@@ -26,27 +26,25 @@ export default function Wordinput() {
         if (event.key === " ") {
             // console.log(input);
             event.target.value = "";
-            // let vCheck = " " + outputData[i];
+            let vCheck = " " + outputData[i];
 
-            // if (input === vCheck) {
-            //     // console.log("yes");
+            if (input === vCheck && i > 0) {
+                // console.log("yes");
 
-            //     let current = correct + 1;
-            //     setCorrect(current);
-            //     // setCorrectWord(input);
-            // }
-            // if (input !== vCheck) {
-            //     let current = wrong + 1;
-            //     setWrong(current);
-            // }
+                let current = correct + 1;
+                setCorrect(current);
+                // setCorrectWord(input);
+            }
+            if (input !== vCheck && i > 0) {
+                let current = wrong + 1;
+                setWrong(current);
+            }
 
-            if (input === outputData[i]) {
-                console.log("yes");
+            if (input === outputData[i] && i === 0) {
                 let current = correct + 1;
                 setCorrect(current);
             }
-            else if (input !== outputData[i]) {
-                console.log("no")
+            if (input !== outputData[i] && i === 0) {
                 let current = wrong + 1;
                 setWrong(current);
             }
@@ -55,7 +53,6 @@ export default function Wordinput() {
             setI(currenti);
 
         }
-        return true;
 
     }
 
